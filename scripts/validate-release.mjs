@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import { readFile, stat } from 'node:fs/promises';
+const readJson = async path => JSON.parse(await readFile(path, 'utf8'));
+const manifest = await readJson('manifest.json');
+const pkg = await readJson('package.json');
+const versions = await readJson('versions.json');
+assert.match(manifest.id, /^[a-z0-9-]+$/);
+assert(!manifest.id.includes('obsidian'));
+assert.match(manifest.version, /^\d+\.\d+\.\d+$/);
+assert.equal(pkg.version, manifest.version);
+assert.equal(versions[manifest.version], manifest.minAppVersion);
+assert.equal(typeof manifest.isDesktopOnly, 'boolean');
+assert(manifest.description.length <= 250 && manifest.description.endsWith('.'));
+for (const file of ['main.js', 'styles.css', 'manifest.json', 'README.md', 'LICENSE']) assert((await stat(file)).size > 0, file);
+assert((await readFile('LICENSE', 'utf8')).includes('GNU GENERAL PUBLIC LICENSE'));
+console.log('Release metadata and required files validated.');

@@ -1,0 +1,93 @@
+/* Scoped to the wardrobe; colours follow the active Obsidian theme. */
+.wardrobe-view { overflow-y: auto; padding: 32px 24px calc(64px + env(safe-area-inset-bottom, 0px)); container-type: inline-size; }
+.wardrobe-shell { max-width: 880px; margin-inline: auto; }
+.wardrobe-toolbar, .wardrobe-heading, .wardrobe-section-heading, .wardrobe-row-heading, .wardrobe-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.wardrobe-toolbar { margin-bottom: 32px; }
+.wardrobe-heading { justify-content: flex-start; }
+.wardrobe-mark { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 12px; background: var(--background-secondary); color: var(--text-accent); }
+.wardrobe-heading h2 { margin: 0; padding: 0; font-size: 22px; font-weight: 600; letter-spacing: -.4px; }
+.wardrobe-subtitle { margin: 5px 0 0; color: var(--text-muted); font-size: var(--font-small); }
+.wardrobe-refresh { flex-shrink: 0; }
+.wardrobe-metadata { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+.wardrobe-field { min-width: 0; margin: 0 0 24px; }
+.wardrobe-metadata .wardrobe-field { margin: 0; display: flex; flex-direction: column; }
+.wardrobe-field label { display: block; font-weight: 600; font-size: var(--font-small); margin-bottom: 6px; }
+.wardrobe-help { color: var(--text-muted); font-size: var(--font-small); line-height: 1.5; margin: 0 0 10px; }
+.wardrobe-metadata .wardrobe-help { order: 2; margin: 7px 0 0; }
+.wardrobe-field input, .wardrobe-field select, .wardrobe-field textarea { width: 100%; min-height: 44px; border-radius: 8px; }
+.wardrobe-field textarea { min-height: 100px; resize: vertical; padding: 12px; }
+.wardrobe-layers { border: 1px solid var(--background-modifier-border); border-radius: 12px; overflow: hidden; margin-bottom: 28px; background: var(--background-primary); }
+.wardrobe-section-heading { padding: 18px 20px; background: var(--background-secondary); border-bottom: 1px solid var(--background-modifier-border); flex-wrap: wrap; }
+.wardrobe-section-heading h3 { padding: 0; margin: 0; font-size: var(--font-ui-medium); font-weight: 600; }
+.wardrobe-count { font-size: var(--font-smallest); color: var(--text-muted); }
+.wardrobe-row + .wardrobe-row { border-top: 1px solid var(--background-modifier-border); }
+.wardrobe-row-heading { padding: 16px 20px 0; }
+.wardrobe-row-heading h4 { margin: 0; padding: 0; font-size: var(--font-small); font-weight: 600; }
+.wardrobe-row-selection { font-size: var(--font-smallest); color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 60%; }
+.wardrobe-carousel { --wardrobe-card-width: 156px; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding: 30px calc(50% - var(--wardrobe-card-width) / 2); position: relative; align-items: center; scrollbar-width: thin; }
+.wardrobe-view button.wardrobe-card { flex: 0 0 var(--wardrobe-card-width); height: 170px; display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; white-space: normal; scroll-snap-align: center; scroll-snap-stop: always; opacity: .6; transform: scale(.8); transition: transform .18s ease, opacity .18s ease; padding: 10px; border-radius: 10px; background: var(--background-secondary); border: 1px solid var(--background-modifier-border); box-shadow: none; }
+.wardrobe-view button.wardrobe-card.is-selected { opacity: 1; transform: scale(1.2); z-index: 1; border-color: var(--interactive-accent); box-shadow: 0 0 0 1px var(--interactive-accent); }
+.wardrobe-card img { width: 100%; height: 116px; object-fit: contain; border-radius: 5px; }
+.wardrobe-card > span:last-child { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-smallest); }
+.wardrobe-placeholder { height: 116px; display: grid; place-items: center; color: var(--text-faint); }
+.wardrobe-placeholder svg { width: 28px; height: 28px; }
+.wardrobe-actions { padding-bottom: 28px; }
+.wardrobe-actions .wardrobe-help { margin: 0; }
+.wardrobe-actions button { min-height: 44px; padding-inline: 24px; border-radius: 8px; }
+.wardrobe-maintenance { margin-top: 12px; border: 1px solid var(--background-modifier-border); border-radius: 10px; padding: 0 16px; }
+.wardrobe-maintenance summary { min-height: 48px; align-content: center; cursor: pointer; color: var(--text-muted); font-size: var(--font-small); font-weight: 500; }
+.wardrobe-maintenance[open] { padding-bottom: 12px; }
+.wardrobe-maintenance > p { color: var(--text-muted); font-size: var(--font-small); line-height: 1.5; }
+.wardrobe-assignment { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
+.wardrobe-assignment + .wardrobe-assignment { border-top: 1px solid var(--background-modifier-border); }
+.wardrobe-assignment span { min-width: 0; overflow-wrap: anywhere; font-size: var(--font-small); }
+.wardrobe-assignment input { min-width: 0; flex: 1; }
+.wardrobe-assignment button, .wardrobe-assignment select, .wardrobe-assignment input, .wardrobe-refresh { min-height: 44px; }
+.wardrobe-assignment button { flex-shrink: 0; }
+.wardrobe-view button:focus-visible, .wardrobe-view summary:focus-visible { outline: 2px solid var(--interactive-accent); outline-offset: 4px; }
+.wardrobe-settings > .setting-item-heading .setting-item-description { font-weight: normal; }
+@container (max-width: 540px) {
+ .wardrobe-metadata { grid-template-columns: 1fr; gap: 18px; }
+ .wardrobe-heading h2 { font-size: 19px; }
+ .wardrobe-mark { display: none; }
+ .wardrobe-carousel { --wardrobe-card-width: 124px; }
+ .wardrobe-row-heading, .wardrobe-section-heading { padding-inline: 14px; }
+ .wardrobe-assignment { flex-wrap: wrap; }
+ .wardrobe-assignment select { max-width: 100%; }
+ .wardrobe-field input, .wardrobe-field select, .wardrobe-field textarea { font-size: 16px; }
+}
+body.is-mobile .wardrobe-view { padding: 20px 14px calc(160px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 600px) { .wardrobe-view { padding: 20px 14px calc(160px + env(safe-area-inset-bottom, 0px)); } }
+@media (prefers-reduced-motion: reduce) { .wardrobe-view button.wardrobe-card { transition: none; } }
+
+/* Keep clothing images free of theme button gradients in every state. */
+.wardrobe-view button.wardrobe-card,
+.wardrobe-view button.wardrobe-card:hover,
+.wardrobe-view button.wardrobe-card:active,
+.wardrobe-view button.wardrobe-card.is-selected {
+ background-image: none;
+}
+
+.wardrobe-layer-help { flex-basis: 100%; margin: 0; font-size: var(--font-small); color: var(--text-muted); line-height: 1.5; }
+.wardrobe-row { position: relative; }
+.wardrobe-row-heading { flex-wrap: wrap; gap: 8px; }
+.wardrobe-row-heading h4 { flex: 1; min-width: 80px; overflow-wrap: anywhere; }
+.wardrobe-layer-controls { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+.wardrobe-view .wardrobe-layer-button { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; background: transparent; box-shadow: none; border: none; color: var(--text-muted); }
+.wardrobe-view .wardrobe-layer-button:hover { background: var(--background-modifier-hover); }
+.wardrobe-view .wardrobe-layer-button:disabled { opacity: .3; }
+.wardrobe-drag-handle { cursor: grab; }
+.wardrobe-drag-handle:active { cursor: grabbing; }
+.wardrobe-row-heading .wardrobe-row-selection { flex-basis: 100%; max-width: 100%; }
+.wardrobe-row.is-dragging { opacity: .5; }
+.wardrobe-row.is-drop-before { box-shadow: inset 0 3px var(--interactive-accent); }
+.wardrobe-row.is-drop-after { box-shadow: inset 0 -3px var(--interactive-accent); }
+.wardrobe-add-layer { padding: 16px 20px; border-top: 1px solid var(--background-modifier-border); }
+.wardrobe-add-layer button, .wardrobe-new-layer input { min-height: 44px; }
+.wardrobe-new-layer:not([hidden]) { display: flex; gap: 8px; flex-wrap: wrap; }
+.wardrobe-new-layer input { flex: 1; min-width: 120px; }
+body.is-mobile .wardrobe-layer-button { width: 44px; height: 44px; }
+@container (max-width: 540px) {
+ .wardrobe-layer-button { min-width: 44px; min-height: 44px; }
+ .wardrobe-new-layer input { width: 100%; flex-basis: 100%; font-size: 16px; }
+}

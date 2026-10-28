@@ -1,0 +1,9 @@
+{
+  "id": "wardrobe",
+  "name": "Wardrobe",
+  "version": "1.0.0",
+  "minAppVersion": "1.7.2",
+  "description": "Build outfits from clothing images with customisable rows, note properties and templates.",
+  "author": "JohnMcAnearney",
+  "isDesktopOnly": false
+}
