@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- Rebuild and validate Wardrobe for the next community directory review.
+- No functional changes from 1.0.0.
+
 ## 1.0.0
 
 Initial release of Wardrobe.
