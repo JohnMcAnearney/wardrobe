@@ -3,8 +3,8 @@
 ## Current release
 
 - Display name: Wardrobe
-- Stable plugin ID and installation folder: wardrobe
-- Version/tag: 1.0.1 (no v prefix)
+- Stable plugin ID and installation folder: personal-wardrobe
+- Version/tag: 1.0.2 (no v prefix)
 - Minimum Obsidian version: 1.7.2 (the async revealLeaf API)
 - Licence: GPL-3.0-only
 
@@ -28,13 +28,13 @@ Physical device verification and directory review have not yet been performed.
 
 Create a public repository containing this plugin folder as its root. Keep the source, README, LICENSE, manifest, versions, lockfile, scripts, tests and workflows. Do not upload local data.json, node_modules, dist or generated main.js as source. These are excluded by .gitignore.
 
-The repository must belong to the GitHub account or organisation used for submission. Before submission, verify the ID `wardrobe` is available in the Community directory. Keep that ID stable after publication.
+The repository must belong to the GitHub account or organisation used for submission. The registered plugin ID is `personal-wardrobe`. Keep this ID stable; the display name remains Wardrobe.
 
 ## GitHub release
 
-Commit the source and push tag `1.0.1`. The included workflow validates the project and creates a **draft** release with main.js, manifest.json and styles.css attached separately. Review and publish the draft after completing the manual checks above.
+Commit the source and push tag `1.0.2`. The included workflow validates the project and creates a **draft** release with main.js, manifest.json and styles.css attached separately. Review and publish the draft after completing the manual checks above.
 
-Alternatively, run `npm run release:prepare`, create a release tagged `1.0.1` manually, and attach the three files from `dist/1.0.1/`. SHA256SUMS is provided for local integrity checks. The built-in GitHub source archives alone are insufficient.
+Alternatively, run `npm run release:prepare`, create a release tagged `1.0.2` manually, and attach the three files from `dist/1.0.2/`. SHA256SUMS is provided for local integrity checks. The built-in GitHub source archives alone are insufficient.
 
 ## Submit to Obsidian
 

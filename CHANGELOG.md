@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+- Restore the registered personal-wardrobe plugin ID while keeping the Wardrobe display name.
+- Update the download badge to use the registered ID.
+
 ## 1.0.1
 
 - Rebuild and validate Wardrobe for the next community directory review.
