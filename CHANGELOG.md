@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+- Rebuild and validate the current Wardrobe source for release.
+- No functional changes from 1.0.2; retain the registered personal-wardrobe ID.
+
 ## 1.0.2
 
 - Restore the registered personal-wardrobe plugin ID while keeping the Wardrobe display name.
